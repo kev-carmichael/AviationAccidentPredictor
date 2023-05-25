@@ -10,6 +10,7 @@
     <thead>
     <tr>
         <th> Simulation Id </th>
+        <th> Age Aircraft </th>
         <th> PIC Licence </th>
         <th> Accident Severity </th>
     </tr>
@@ -17,6 +18,7 @@
     <tbody>
     <tr th:each="simulationDTO : ${kevCollection}">
         <td><span th:text="${simulationDTO.getSimulationId()}"> Simulation Id </span></td>
+        <td><span th:text="${simulationDTO.getAgeAircraft()}"> Age Aircraft </span></td>
         <td><span th:text="${simulationDTO.getPicLicence()}"> PIC Licence </span></td>
         <td><span th:text="${simulationDTO.getAccidentSeverity()}"> Accident Severity </span></td>
     </tr>
