@@ -108,39 +108,6 @@ public class WebSimulationController {
         return "all";
     }
 
-    /*@GetMapping(path = "/web/simulation/{id}")
-    public String getSimulationById(Model model) {
-
-        SimulationDTO response = new RestTemplateBuilder()
-                .build()
-                .getForObject(
-                        "http://localhost:8080/rest/simulation/{id}",
-                        SimulationDTO.class);
-
-        List<SimulationDTO> list = response.getList();
-            model.addAttribute(
-                    "kevCollection", list);
-
-        return "update"; //TO DISPLAY ONE RECORD
-    }*/
-
-    @DeleteMapping(path = "/web/simulation/delete/{id}")
-    public String deleteSimulation(@PathVariable("id") int simulationId, Model model) {
-
-        Boolean response = new RestTemplateBuilder()
-                .build()
-                .getForObject(
-                        "http://localhost:8080/rest/simulation/delete/{id}",
-                        Boolean.class);
-
-        String deleted = response.toString();
-        model.addAttribute(
-                "simulationResult",
-                new SimulationResult("", deleted));
-
-        return "delete";
-    }
-
     @GetMapping(path = "/web/user/all") //PUT IN OWN WEBUSERCONTROLLER CLASS
     public String getUserList(Model model) {
 

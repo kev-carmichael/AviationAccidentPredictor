@@ -12,8 +12,6 @@
         <th> Simulation Id </th>
         <th> PIC Licence </th>
         <th> Accident Severity </th>
-        <th> Update Simulation </th>
-        <th> Delete Simulation </th>
     </tr>
     </thead>
     <tbody>
@@ -21,9 +19,6 @@
         <td><span th:text="${simulationDTO.getSimulationId()}"> Simulation Id </span></td>
         <td><span th:text="${simulationDTO.getPicLicence()}"> PIC Licence </span></td>
         <td><span th:text="${simulationDTO.getAccidentSeverity()}"> Accident Severity </span></td>
-        <td><a class="btn-severity" href="update" target="_self">Update</a></td>
-        <td><a th:value="${simulationDTO.getSimulationId()}" value="id" class="btn-severity" href="delete/{id}" target="_self">Delete</a></td>
-
     </tr>
     </tbody>
 </table>
