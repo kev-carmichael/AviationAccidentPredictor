@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>All Simulation Records:</h1>
+<h1>Previous Accident Records:</h1>
 <table>
     <thead>
     <tr>
@@ -18,9 +18,7 @@
         <th> Type Hrs </th>
         <th> 90-day Hrs </th>
         <th> 28-day Hrs </th>
-        <th> Day of the Wk </th>
         <th> Accident Severity </th>
-        <th> Injury Severity </th>
     </tr>
     </thead>
     <tbody>
@@ -34,9 +32,7 @@
         <td><span th:text="${simulationDTO.getTypeHrs()}"> Type Hrs </span></td>
         <td><span th:text="${simulationDTO.getNinetyDayHrs()}"> 90-day Hrs </span></td>
         <td><span th:text="${simulationDTO.getTwentyEightDayHrs()}"> 28-day Hrs </span></td>
-        <td><span th:text="${simulationDTO.getDayOfWeek()}"> Day of the Wk </span></td>
         <td><span th:text="${simulationDTO.getAccidentSeverity()}"> Accident Severity </span></td>
-        <td><span th:text="${simulationDTO.getInjurySeverity()}"> Injury Severity </span></td>
     </tr>
     </tbody>
 </table>
