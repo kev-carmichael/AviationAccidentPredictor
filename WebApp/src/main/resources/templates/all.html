@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" ></script>
 </head>
 <body>
-<h1>Previous Accident Records:</h1>
-<table>
-    <thead>
-    <tr>
-        <th> Simulation Id </th>
-        <th> Age Aircraft </th>
-        <th> No Passengers </th>
-        <th> Pilot Licence </th>
-        <th> Pilot Age </th>
-        <th> Total Hrs </th>
-        <th> Type Hrs </th>
-        <th> 90-day Hrs </th>
-        <th> 28-day Hrs </th>
-        <th> Accident Severity </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="simulationDTO : ${kevCollection}">
-        <td><span th:text="${simulationDTO.getSimulationId()}"> Simulation Id </span></td>
-        <td><span th:text="${simulationDTO.getAgeAircraft()}"> Age Aircraft </span></td>
-        <td><span th:text="${simulationDTO.getNoOfPassengers()}"> No Passengers </span></td>
-        <td><span th:text="${simulationDTO.getPicLicence()}"> Pilot Licence </span></td>
-        <td><span th:text="${simulationDTO.getPicAge()}"> Pilot Age </span></td>
-        <td><span th:text="${simulationDTO.getTotalHrs()}"> Total Hrs </span></td>
-        <td><span th:text="${simulationDTO.getTypeHrs()}"> Type Hrs </span></td>
-        <td><span th:text="${simulationDTO.getNinetyDayHrs()}"> 90-day Hrs </span></td>
-        <td><span th:text="${simulationDTO.getTwentyEightDayHrs()}"> 28-day Hrs </span></td>
-        <td><span th:text="${simulationDTO.getAccidentSeverity()}"> Accident Severity </span></td>
-    </tr>
-    </tbody>
-</table>
+<div class="container-fluid bg-light p-5">
+    <h1 class="display-4">Previous Accident Records:</h1>
+    <hr class="my-4">
+
+    <table>
+        <thead>
+        <tr>
+            <th> Simulation Id </th>
+            <th> Age Aircraft </th>
+            <th> No Passengers </th>
+            <th> Pilot Licence </th>
+            <th> Pilot Age </th>
+            <th> Total Hrs </th>
+            <th> Type Hrs </th>
+            <th> 90-day Hrs </th>
+            <th> 28-day Hrs </th>
+            <th> Accident Severity </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="simulationDTO : ${kevCollection}">
+            <td><span th:text="${simulationDTO.getSimulationId()}"> Simulation Id </span></td>
+            <td><span th:text="${simulationDTO.getAgeAircraft()}"> Age Aircraft </span></td>
+            <td><span th:text="${simulationDTO.getNoOfPassengers()}"> No Passengers </span></td>
+            <td><span th:text="${simulationDTO.getPicLicence()}"> Pilot Licence </span></td>
+            <td><span th:text="${simulationDTO.getPicAge()}"> Pilot Age </span></td>
+            <td><span th:text="${simulationDTO.getTotalHrs()}"> Total Hrs </span></td>
+            <td><span th:text="${simulationDTO.getTypeHrs()}"> Type Hrs </span></td>
+            <td><span th:text="${simulationDTO.getNinetyDayHrs()}"> 90-day Hrs </span></td>
+            <td><span th:text="${simulationDTO.getTwentyEightDayHrs()}"> 28-day Hrs </span></td>
+            <td><span th:text="${simulationDTO.getAccidentSeverity()}"> Accident Severity </span></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
 </body>
 </html>
