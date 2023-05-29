@@ -3,65 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <title>Accident Severity Predictor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" ></script>
 </head>
 <body>
-<h1>Enter Flight Details:</h1>
-<form action="#"
-      th:action="@{/web/simulation/run8}"
-      th:object="${simulationInput}"
-      method="post">
-  <legend>Age aircraft</legend>
-  <p>
-    <select id="dropdownageaircraft" name="dropdownageaircraft" th:field="*{text0}">
-      <option th:each="i : ${#numbers.sequence(0, 89)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <legend>No passengers</legend>
-  <p>
-    <select id="dropdownnopassengers" name="dropdownnopassengers" th:field="*{text1}">
-      <option th:each="i : ${#numbers.sequence(0, 6)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <legend>PIC Licence</legend>
-  <p>
-    <select id="dropdownlicence" name="dropdownlicence" th:field="*{text2}">
-      <option value="airline transport pilot licence" selected>airline transport pilot licence</option>
-      <option value="private pilot licence">private pilot licence</option>
-      <option value="student">student</option>
-    </select>
-  </p>
-  <legend>PIC age</legend>
-  <p>
-    <select id="dropdownpicage" name="dropdownpicage" th:field="*{text3}">
-      <option th:each="i : ${#numbers.sequence(16, 88)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <legend>Total Hrs</legend>
-  <p>
-    <select id="dropdowntotalhrs" name="dropdowntotalhrs" th:field="*{text4}">
-      <option th:each="i : ${#numbers.sequence(10, 31500)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <legend>Type Hrs</legend>
-  <p>
-    <select id="dropdowntypehrs" name="dropdowntypehrs" th:field="*{text5}">
-      <option th:each="i : ${#numbers.sequence(0, 13500)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <legend>90-day Hrs</legend>
-  <p>
-    <select id="dropdown90dayhrs" name="dropdown90dayhrs" th:field="*{text6}">
-      <option th:each="i : ${#numbers.sequence(0, 305)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <legend>28-day Hrs</legend>
-  <p>
-    <select id="dropdown28dayhrs" name="dropdown28dayhrs" th:field="*{text7}">
-      <option th:each="i : ${#numbers.sequence(0, 140)}" th:value="${i}" th:text="${i}"></option>
-    </select>
-  </p>
-  <p><input type="submit" value="Run Simulation" /></p>
-</form>
+
+<div class="container-fluid bg-light p-5">
+  <h1 class="display-4">Enter Flight Details:</h1>
+  <hr class="my-4">
+
+  <form action="#"
+        th:action="@{/web/simulation/run8}"
+        th:object="${simulationInput}"
+        method="post">
+    <p class="lead">Age aircraft</p>
+    <p>
+      <select id="dropdownageaircraft" name="dropdownageaircraft" th:field="*{text0}">
+        <option th:each="i : ${#numbers.sequence(0, 89)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p class="lead">No passengers</p>
+    <p>
+      <select id="dropdownnopassengers" name="dropdownnopassengers" th:field="*{text1}">
+        <option th:each="i : ${#numbers.sequence(0, 6)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p class="lead">Pilot Licence</p>
+    <p>
+      <select id="dropdownlicence" name="dropdownlicence" th:field="*{text2}">
+        <option value="airline transport pilot licence" selected>airline transport pilot licence</option>
+        <option value="private pilot licence">private pilot licence</option>
+        <option value="student">student</option>
+      </select>
+    </p>
+    <p class="lead">Pilot Age</p>
+    <p>
+      <select id="dropdownpicage" name="dropdownpicage" th:field="*{text3}">
+        <option th:each="i : ${#numbers.sequence(16, 88)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p class="lead">Total Hrs</p>
+    <p>
+      <select id="dropdowntotalhrs" name="dropdowntotalhrs" th:field="*{text4}">
+        <option th:each="i : ${#numbers.sequence(10, 31500)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p class="lead">Type Hrs</p>
+    <p>
+      <select id="dropdowntypehrs" name="dropdowntypehrs" th:field="*{text5}">
+        <option th:each="i : ${#numbers.sequence(0, 13500)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p class="lead">90-day Hrs</p>
+    <p>
+      <select id="dropdown90dayhrs" name="dropdown90dayhrs" th:field="*{text6}">
+        <option th:each="i : ${#numbers.sequence(0, 305)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p class="lead">28-day Hrs</p>
+    <p>
+      <select id="dropdown28dayhrs" name="dropdown28dayhrs" th:field="*{text7}">
+        <option th:each="i : ${#numbers.sequence(0, 140)}" th:value="${i}" th:text="${i}"></option>
+      </select>
+    </p>
+    <p><input type="submit" value="Submit" class="btn btn-primary btn-lg" role="button"/></p>
+  </form>
+
+
+</div>
+
+
 
 </body>
 </html>
